@@ -1,0 +1,107 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Todo font type */
+
+:root {
+    --main-color: green;
+    --sub-color: white;
+    --white: white;
+    --black: black;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:visited {
+        color: inherit;
+    }
+
+.navbar {
+    background: var(--main-color);
+}
+
+    .navbar a {
+        display: block;
+        padding: 1em;
+        color: var(--sub-color);
+    }
+
+        .navbar a:hover {
+            background: var(--sub-color);
+            color: grey;
+        }
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+main {
+    padding: 1em;
+}
+
+/* Home */
+
+.navbox-container,
+.catalogue-container,
+.invoice-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+
+.navbox {
+    position: relative;
+    filter: drop-shadow(3px 3px 6px gray);
+    text-align: center;
+}
+
+    .navbox:hover {
+    }
+
+        .navbox:hover img {
+            filter: brightness(50%);
+        }
+
+    .navbox img {
+        filter: brightness(45%);
+        height: 300px;
+    }
+
+    .navbox figcaption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--white);
+        font-size: 2em;
+        font-weight: 500;
+    }
+
+/* Catalogue */
+h2 {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.catalogue-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Invoices */
+
+.invoice-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

@@ -1,0 +1,64 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@{
+    ViewData["Title"] = "Invoice";
+}
+@using MbmStore.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <section class="invoice-container">
+
+        <div>
+            <h3>Customer</h3>
+        </div>
+
+        <div>
+            <h3>Product</h3>
+        </div>
+
+        <div>
+            <h3>Price</h3>
+        </div>
+
+        <div>
+            <h3>Total Price</h3>
+        </div>
+    </section>
+
+    <section class="invoice-container">
+        @foreach (Invoice invoice in ViewBag.Invoices)
+        {
+
+            <div>
+
+                <p>@invoice.Customer.FirstName @invoice.Customer.LastName</p>
+            </div>
+
+            <div>
+
+                @foreach (OrderItem orderItem in invoice.OrderItems)
+                {
+                    <p>@orderItem.Product.Title (@orderItem.Product.GetType().ToString().Substring(16))</p>
+                }
+            </div>
+
+            <div>
+
+                @foreach (OrderItem orderItem in invoice.OrderItems)
+                {
+                    <p>@orderItem.Product.Price</p>
+                }
+            </div>
+
+            <div>
+                <p>@invoice.TotalPrice</p>
+            </div>
+        }
+    </section>
+</body>
+</html>

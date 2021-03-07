@@ -1,0 +1,25 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <section class="customer-container">
+        @foreach (var customer in @ViewBag.Customers)
+        {
+            <h3>@customer.FirstName @customer.LastName is @customer.Age (@string.Join(",", customer.PhoneNumbers))</h3>
+
+            <p>@customer.Address</p>
+
+            <p>@customer.Zip @customer.City</p>
+        }
+    </section>
+</body>
+</html>

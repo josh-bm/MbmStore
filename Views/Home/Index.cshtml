@@ -1,0 +1,43 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <section class="navbox-container">
+        <a asp-controller="Catalogue" asp-action="Index">
+            <figure class="navbox">
+                <img src="/Images/catalogue.jpg" alt="" />
+                <figcaption>
+                    Catalogue
+                </figcaption>
+            </figure>
+        </a>
+
+        <a asp-controller="Customer" asp-action="Index">
+            <figure class="navbox">
+                <img src="~/Images/customers.jpg" alt="" />
+                <figcaption>
+                    Customers
+                </figcaption>
+            </figure>
+        </a>
+
+        <a asp-controller="Invoice" asp-action="Index">
+            <figure class="navbox">
+                <img src="~/Images/invoice.jpg" alt="" />
+                <figcaption>
+                    Invoices
+                </figcaption>
+            </figure>
+        </a>
+    </section>
+</body>
+</html>
